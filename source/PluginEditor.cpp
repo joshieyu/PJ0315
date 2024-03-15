@@ -6,6 +6,8 @@ PluginEditor::PluginEditor (PluginProcessor& p)
     juce::ignoreUnused (processorRef);
 
     addAndMakeVisible (inspectButton);
+    addAndMakeVisible (newButton);
+    newButton.setButtonText ("testing");
 
     // this chunk of code instantiates and opens the melatonin inspector
     inspectButton.onClick = [&] {
@@ -20,7 +22,7 @@ PluginEditor::PluginEditor (PluginProcessor& p)
 
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (400, 300);
+    setSize (500, 400);
 }
 
 PluginEditor::~PluginEditor()
@@ -45,4 +47,5 @@ void PluginEditor::resized()
     auto area = getLocalBounds();
     area.removeFromBottom(50);
     inspectButton.setBounds (getLocalBounds().withSizeKeepingCentre(100, 50));
+    newButton.setBounds (getLocalBounds().withSize (100, 100));
 }
