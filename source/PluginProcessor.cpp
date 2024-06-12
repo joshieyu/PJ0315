@@ -184,3 +184,8 @@ juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new PluginProcessor();
 }
+
+//void PluginProcessor::sliderValueChanged(juce::Slider* slider) // Fix this
+//{
+//
+//}
